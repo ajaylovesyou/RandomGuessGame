@@ -51,10 +51,15 @@ git clone <your-repo-link>
 cd <project-folder>
 ```
 
-3. Run the Python file
+3. Run the Python file ( For MacOS/Linux )
 
 ```bash
 python3 number_guessing_game.py
+```
+4. Run the Python file ( For Windows )
+
+```bash
+python number_guessing_game.py
 ```
 
 ---
