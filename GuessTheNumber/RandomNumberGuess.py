@@ -8,27 +8,28 @@ def show_mode():
     print("3. Hard")
     print("4. Very hard\n")
 
+
 def UserGuess(SecretGuess):
 
-    secret = SecretGuess
-    counter = 0
-    while True:
-        guess = int(input("Enter your guess: "))
-        counter += 1
+        secret = SecretGuess
+        counter = 0
+        while True:
+            guess = int(input("Enter your guess: "))
+            counter += 1
 
-        if guess == secret:
+            if guess == secret:
 
-             print("Woahh ! You Guessed it Right. Victoryyyy.....🏆✨\n ")
-             print(f"You Guessed In { counter } Attampts.")
-             break
+                print("Woahh ! You Guessed it Right. Victoryyyy.....🏆✨\n ")
+                print(f"You Guessed In { counter } Attampts.")
+                break
 
-        elif guess > secret:
+            elif guess > secret:
 
-             print("Too High!")
+                print("Too High!")
 
-        elif guess < secret:
+            elif guess < secret:
 
-                print("Too Low!")
+                    print("Too Low!")
 
 def Easy():
 
@@ -52,30 +53,44 @@ def Very_hard():
     
     return SecretNumber
 
+
 def main():
 
-    mode = show_mode()
-    choice = input ("Enter your mode : ")
-    match choice:
-        case '1':
+        while True:
+            mode = show_mode()
+            choice = input ("Enter your mode : ")
+            match choice:
+                case '1':
 
-            UserGuess(Easy())
+                    UserGuess(Easy())
 
-        case '2':
+                case '2':
 
-            UserGuess(Medium())
+                    UserGuess(Medium())
 
-        case '3':
-             
-             UserGuess(Hard())
+                case '3':
+                        
+                        UserGuess(Hard())
 
-        case '4':
+                case '4':
+                    
+                    UserGuess(Very_hard())
+                
+                case _:
+                    print("Invalid Mode ! Please choose again : ")
+
+
+            playagain = input("Want To Play Again? (y/n): ")
+            if playagain == 'y':
+                      continue
+            elif playagain == 'n':
+                  print("Thanks For Playing 😎")
+                  break
+            else:
+                    print("Invalid Input!")
+                    break
+
             
-            UserGuess(Very_hard())
-        
-        case _:
-            print("Invalid Mode ! Please choose again : ")
-
 if __name__ == "__main__":
     main()
 
